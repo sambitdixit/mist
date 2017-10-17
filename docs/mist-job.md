@@ -37,7 +37,11 @@ Link for direct download if you don't use a dependency manager:
 ###### Scala Api
 
 Main thing of mist-library is a `MistJob`. Your class should extends it to declare how to execute it.
-To do it you need to implement `defineJob: JobDef[A]` where `JobDef[A]`
+To do it you need to implement `defineJob` that returns `JobDef[A]`.
+
+`JobDef[A]` is something like function that takes `JobContext`(contains job parameters, spark context and internal mist's stuff) and returns a value of type `A`.
+
+
 
 
 Base class for scala mist job is `mist.api.MistJob[T]`, so to write your job
