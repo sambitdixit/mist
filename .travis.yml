@@ -12,7 +12,7 @@ before_install:
 
 
 script:
-  - sbt -DsparkVersion=$SPARK_VERSION -no-colors -J-Xss2m testAll
+  - sbt -DsparkVersion=$SPARK_VERSION -no-colors testAll
 
 cache:
   directories:
