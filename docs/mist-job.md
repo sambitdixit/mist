@@ -5,7 +5,7 @@ Our examples:
 - [spark2](https://github.com/Hydrospheredata/mist/tree/master/examples-spark2/src/main/scala)
 - [python](https://github.com/Hydrospheredata/mist/tree/master/examples-python)
 
-### Scala
+### Scala/Java
 
 Add Mist as dependency in your `build.sbt`:
 
@@ -33,6 +33,19 @@ Maven dependency:
     
 Link for direct download if you don't use a dependency manager:
 * http://central.maven.org/maven2/io/hydrosphere/mist/
+
+###### Scala Api
+
+Base class for scala mist job is `mist.api.MistJob[T]`, so to write your job
+you need to extend you job object from that trait.
+Note - for scala we expect that job class is `object`(scala singleton).
+
+```scala
+import mist.api._
+
+object MyJob extends MistJob
+```
+
 
 ###### Mist Scala Spark Job 
 
