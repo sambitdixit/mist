@@ -36,6 +36,10 @@ Link for direct download if you don't use a dependency manager:
 
 ###### Scala Api
 
+Main thing of mist-library is a `MistJob`. Your class should extends it to declare how to execute it.
+To do it you need to implement `defineJob: JobDef[A]` where `JobDef[A]`
+
+
 Base class for scala mist job is `mist.api.MistJob[T]`, so to write your job
 you need to extend you job object from that trait.
 Note - for scala we expect that job class is `object`(scala singleton).
@@ -43,7 +47,7 @@ Note - for scala we expect that job class is `object`(scala singleton).
 ```scala
 import mist.api._
 
-object MyJob extends MistJob
+object MyJob extends MistJob[T]
 ```
 
 
